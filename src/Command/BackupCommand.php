@@ -109,7 +109,7 @@ class BackupCommand extends BaseCommand
 
         $password_parameter = '';
         if ($database_password != '') {
-            $password_parameter = "-p'{$database_password}'";
+            $password_parameter = "-p{$database_password}";
         }
 
         exec("mysqldump -u {$database_user} {$password_parameter} -h {$database_server} {$dbase} > {$targetFile} ");
